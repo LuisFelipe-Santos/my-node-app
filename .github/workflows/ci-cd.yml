@@ -3,7 +3,7 @@ name: CI/CD Pipeline
 on:
   push:
     branches:
-      - master
+      - main  # Ou 'master', dependendo da sua configuração
 
 jobs:
   build:
@@ -26,5 +26,5 @@ jobs:
 
       - name: Push Docker image
         run: |
-          docker tag my-node-app luisfelipe-santos/my-node-app:${{ github.sha }}
-          docker push luisfelipe-santos/my-node-app:${{ github.sha }}
+          docker tag my-node-app yofate/my-new-node-app:${{ github.sha }}  # Atualizado para o novo repositório
+          docker push yofate/my-new-node-app:${{ github.sha }}  # Atualizado para o novo repositório
