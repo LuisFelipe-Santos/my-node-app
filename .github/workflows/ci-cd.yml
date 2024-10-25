@@ -3,7 +3,7 @@ name: CI/CD Pipeline
 on:
   push:
     branches:
-      - main  # Ou 'master', dependendo da sua configuração
+      - master
 
 jobs:
   build:
