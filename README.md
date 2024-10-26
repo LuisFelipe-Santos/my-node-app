@@ -27,10 +27,10 @@ Este projeto consiste em uma aplicação de back-end em Node.js configurada para
 ## Imagens
 
 ### Docker Hub
-![Docker_Hub](link_da_imagem_do_dockerhub)
+![Docker_Hub](https://github.com/LuisFelipe-Santos/my-node-app/blob/main/Docker_Hub.png?raw=true)
 
 ### GitHub Actions
-![GitHub_Actions](link_da_imagem_do_github_actions)
+![GitHub_Actions](https://github.com/LuisFelipe-Santos/my-node-app/blob/main/GitHub_Actions.png?raw=true)
 
 ## Código Completo
 
