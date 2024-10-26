@@ -3,7 +3,7 @@ name: CI/CD Pipeline
 on:
   push:
     branches:
-      - master
+      - main
 
 jobs:
   build:
@@ -16,13 +16,13 @@ jobs:
     - name: Set up Node.js
       uses: actions/setup-node@v2
       with:
-        node-version: '14' 
+        node-version: '14' # ou a versão desejada
 
     - name: Install dependencies
       run: npm install
 
     - name: Run tests
-      run: npm test || true 
+      run: npm test || true # Se você tiver testes, adicione aqui
 
     - name: Build Docker image
       run: docker build -t my-node-app .
@@ -30,6 +30,7 @@ jobs:
     - name: Login to Docker Hub
       run: echo "${{ secrets.DOCKER_PASSWORD }}" | docker login -u "${{ secrets.DOCKER_USERNAME }}" --password-stdin
 
-    - name: Push Docker image
-      run: docker tag my-node-app:latest ${{ secrets.DOCKER_USERNAME }}/my-node-app:latest
-      run: docker push ${{ secrets.DOCKER_USERNAME }}/my-node-app:latest
+    - name: Tag and Push Docker image
+      run: |
+        docker tag my-node-app:latest ${{ secrets.DOCKER_USERNAME }}/my-node-app:latest
+        docker push ${{ secrets.DOCKER_USERNAME }}/my-node-app:latest
